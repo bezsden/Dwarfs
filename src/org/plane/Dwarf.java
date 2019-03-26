@@ -10,7 +10,7 @@ public class Dwarf implements Comparable<Dwarf> {
 
 
     public int compareTo(Dwarf o) {
-        return  this.getAge().compareTo(o.getAge());
+        return  this.getName().compareTo(o.getName());
     }
 
     public Dwarf(String name, Integer age) {

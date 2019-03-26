@@ -7,7 +7,7 @@ import java.util.*;
 
 public class Sort {
     public static void main(String[] args) {
-        Dwarf dwf1 = new Dwarf("Tory",200);
+        Dwarf dwf1 = new Dwarf("Atrey",200);
         Dwarf dwf2 = new Dwarf("Rory",180);
         Dwarf dwf3 = new Dwarf("Bary",150);
 
@@ -27,13 +27,13 @@ public class Sort {
 
 
         for (Dwarf dwf:dwl ) {
-            System.out.println(dwf.getAge());
+            System.out.println(dwf.getName()+" "+dwf.getAge());
         }
 
         Collections.sort(dwl);
 
         for (Dwarf dwf:dwl ) {
-            System.out.println(dwf.getAge());
+            System.out.println(dwf.getName()+" "+dwf.getAge());
         }
 
     }
