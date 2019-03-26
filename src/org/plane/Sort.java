@@ -9,7 +9,7 @@ public class Sort {
     public static void main(String[] args) {
         Dwarf dwf1 = new Dwarf("Tory",200);
         Dwarf dwf2 = new Dwarf("Rory",180);
-        Dwarf dwf3 = new Dwarf("Bary",150);
+        Dwarf dwf3 = new Dwarf("Sara",150);
 
         //dwf1.say();
         //dwf2.say();
@@ -21,19 +21,19 @@ public class Sort {
         // First use comparable, then comparator
 
         List<Dwarf> dwl = new ArrayList<Dwarf>();
-        dwl.add(dwf1);
         dwl.add(dwf2);
+        dwl.add(dwf1);
         dwl.add(dwf3);
 
 
         for (Dwarf dwf:dwl ) {
-            System.out.println(dwf.getName());
+            System.out.println(dwf.getName()+" "+dwf.getAge());
         }
 
         Collections.sort(dwl);
 
         for (Dwarf dwf:dwl ) {
-            System.out.println(dwf.getName());
+            System.out.println(dwf.getName()+" "+dwf.getAge());
         }
 
     }
