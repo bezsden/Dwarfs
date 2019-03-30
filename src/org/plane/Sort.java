@@ -10,6 +10,7 @@ public class Sort {
         Dwarf dwf1 = new Dwarf("Atrey",200);
         Dwarf dwf2 = new Dwarf("Rory",180);
         Dwarf dwf3 = new Dwarf("Bary",150);
+        Dwarf dwf4 = new Dwarf("Bary",180);
 
         //dwf1.say();
         //dwf2.say();
@@ -24,17 +25,31 @@ public class Sort {
         dwl.add(dwf2);
         dwl.add(dwf1);
         dwl.add(dwf3);
+        dwl.add(dwf4);
 
 
         for (Dwarf dwf:dwl ) {
             System.out.println(dwf.getName()+" "+dwf.getAge());
         }
 
-        Collections.sort(dwl);
+        // create object so comparator could be used - had to use hardcode default constructor
+        Dwarf sort = new Dwarf();
+        Dwarf.DwarfNameAge dwarfsort = sort.new DwarfNameAge();
+        Collections.sort(dwl,dwarfsort);
+
+        // works too
+        // Collections.sort(dwl,dwf1);
+
 
         for (Dwarf dwf:dwl ) {
             System.out.println(dwf.getName()+" "+dwf.getAge());
         }
 
+        Dwarf.DwarfAgeName dwarfsort2 = sort.new DwarfAgeName();
+        Collections.sort(dwl,dwarfsort2);
+
+        for (Dwarf dwf:dwl ) {
+            System.out.println(dwf.getName()+" "+dwf.getAge());
+        }
     }
 }

@@ -1,12 +1,19 @@
 package org.plane;
 
-public class Dwarf implements Comparable<Dwarf> {
+import java.util.Comparator;
+
+public class Dwarf implements Comparable<Dwarf>  {
     private String name;
     private Integer age;
+
+    public Dwarf() {
+
+    }
 
     public void say() {
         System.out.println("I am "+name);
     }
+
 
 
     public int compareTo(Dwarf o) {
@@ -34,4 +41,30 @@ public class Dwarf implements Comparable<Dwarf> {
     public void setAge(Integer age) {
         this.age = age;
     }
+
+    public class DwarfNameAge implements Comparator<Dwarf> {
+
+    @Override
+    public int compare(Dwarf o1, Dwarf o2) {
+        if (o1.getName().compareTo(o2.getName())==0)
+        {return o1.getAge().compareTo(o2.getAge());
+        }
+        else
+            return o1.getName().compareTo(o2.getName());
+
+    }
+    }
+    public class DwarfAgeName implements Comparator<Dwarf> {
+
+        @Override
+        public int compare(Dwarf o1, Dwarf o2) {
+            if (o1.getAge().compareTo(o2.getAge())==0)
+            {return o1.getName().compareTo(o2.getName());
+            }
+            else
+                return o1.getAge().compareTo(o2.getAge());
+
+        }
+    }
+
 }
